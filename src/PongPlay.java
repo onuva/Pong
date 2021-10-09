@@ -436,15 +436,15 @@ public class PongPlay extends JPanel implements ActionListener{
 	}
 	
 	public void pingHit(String s) {
-		/*
-		 * try { File pingFile = new File (s); pingSound =
-		 * AudioSystem.getAudioInputStream(pingFile); ping = AudioSystem.getClip();
-		 * ping.open(pingSound); } catch(Exception e){
-		 * System.out.println("An error with the sound occured."); e.printStackTrace();
-		 * }
-		 * 
-		 * ping.setFramePosition(0); ping.start();
-		 */
+		
+		  try { File pingFile = new File (s); pingSound =
+		  AudioSystem.getAudioInputStream(pingFile); ping = AudioSystem.getClip();
+		  ping.open(pingSound); } catch(Exception e){
+		  System.out.println("An error with the sound occured."); e.printStackTrace();
+		  }
+		  
+		  ping.setFramePosition(0); ping.start();
+		 
 	}
 	
 	

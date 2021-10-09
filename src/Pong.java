@@ -112,7 +112,6 @@ public class Pong extends JPanel{
 		pH = new PongHome(this);
 		cards.add(pH, "Home Page");
 		cl.show(cards, "Home Page");
-		System.out.println("uhhh");
 		
 	}
 	
