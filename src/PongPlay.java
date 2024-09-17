@@ -196,7 +196,7 @@ public class PongPlay extends JPanel implements ActionListener{
 				yI = r.nextInt(9) - 4;
 			}
 			else { 
-				xI = r.nextInt(3) + 2;
+				xI = r.nextInt(3) + 6;
 				yI = r.nextInt(9) - 4;
 			}
 			while (yI < 2 && yI > -2) yI = r.nextInt(9) - 4;
@@ -217,7 +217,7 @@ public class PongPlay extends JPanel implements ActionListener{
 				yI = r.nextInt(9) - 4;
 			}
 			else { 
-				xI = -(r.nextInt(3) + 2);
+				xI = -(r.nextInt(3) + 6);
 				yI = r.nextInt(9) - 4;
 			}
 			while (yI < 2 && yI > -2) yI = r.nextInt(9) - 4;
@@ -393,14 +393,17 @@ public class PongPlay extends JPanel implements ActionListener{
 	    inp.put(KeyStroke.getKeyStroke(KeyEvent.VK_Y, 0, true), "pressedY");
 	    this.getActionMap().put("pressedY", new AbstractAction() {
 	        public void actionPerformed(ActionEvent e) {
-	        	pause = false;
-				if(xI != 0 && yI != 0) {
+				if(!pause) {
 					b = r.nextInt(2);
 					randomB(b);
 					tempX = xI;
 					tempY = yI;
 				}
-				if(xI == 0 && yI == 0) {
+				else if(xI == 0 && yI == 0) {
+					pause = false;
+		        	backButton(false);
+		        	b = r.nextInt(2);
+					randomB(b);
 					xI = tempX;
 					yI = tempY;
 				}
